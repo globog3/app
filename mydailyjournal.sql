@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2024 at 03:34 PM
+-- Generation Time: Jan 05, 2025 at 04:22 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `webdailyjournal`
+-- Database: `mydailyjournal`
 --
 
 -- --------------------------------------------------------
@@ -50,6 +50,17 @@ INSERT INTO `article` (`id`, `judul`, `isi`, `gambar`, `tanggal`, `username`) VA
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id` int(11) NOT NULL,
+  `image_url` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -67,7 +78,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `foto`, `role`) VALUES
 (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', '', 'admin'),
-(2, 'bryantbernhard', 'e10adc3949ba59abbe56e057f20f883e', '', 'user');
+(2, 'adipriyo', 'e10adc3949ba59abbe56e057f20f883e', '', 'user');
 
 --
 -- Indexes for dumped tables
@@ -77,6 +88,12 @@ INSERT INTO `user` (`id`, `username`, `password`, `foto`, `role`) VALUES
 -- Indexes for table `article`
 --
 ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -94,6 +111,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `article`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`

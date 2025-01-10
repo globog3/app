@@ -144,16 +144,13 @@
         <section id="gallery" class="text-center p-5 bg-danger">
             <div class="container">
                 <h1 class="fw-bold display-4 pb-3">gallery</h1>
-                <div id="carouselExample" class="carousel slide">
+                <!-- <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://hips.hearstapps.com/hmg-prod/images/2026-ferrari-f80-102-670fcc5ff14d6.jpg?crop=1.00xw:0.846xh;0,0.154xh&resize=2048:*" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">   
                         </div>
                         <div class="carousel-item">
-                            <img src="https://www.aljazeera.com/wp-content/uploads/2024/10/AP24301792578902-1730093664.jpg?resize=770%2C513&quality=80"  class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://s7d2.scene7.com/is/image/TWCNews/Charles_Leclerc_F1_racing_AP" class="d-block w-100" alt="...">
                         </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -164,7 +161,25 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                </div>
+                </div> -->
+                <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+      <?php
+      $sql = "SELECT * FROM gallery ORDER BY id DESC";
+      $hasil = $conn->query($sql); 
+
+      while($row = $hasil->fetch_assoc()){
+      ?>
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/<?= $row["image_url"]?>" class="card-img-top" alt="..." />
+          </div>
+        </div>
+        <?php
+      }
+      ?> 
+    </div>
+  </div>
             </div>
         </section>
         <section id="schedule">

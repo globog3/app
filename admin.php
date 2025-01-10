@@ -30,6 +30,7 @@ if ($_SESSION['role'] != 'admin') {
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous"
     /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>  
         html {
             position: relative;
@@ -71,7 +72,10 @@ if ($_SESSION['role'] != 'admin') {
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?page=article">Article</a>
-            </li> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.php?page=gallery">Gallery</a>
+            </li>  
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-danger fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <?= $_SESSION['username']?>
