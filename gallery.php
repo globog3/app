@@ -38,8 +38,8 @@ $(document).ready(function(){
             url : "gallery_data.php",
             method : "POST",
             data : {
-					            hlm: hlm
-				           },
+					hlm: hlm
+			},
             success : function(data){
                     $('#gallery_data').html(data);
             }
